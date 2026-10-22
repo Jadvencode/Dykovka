@@ -224,7 +224,40 @@
 </head>
 <body>
 
-    <main class="hlavni-panel">
+<div id="vstupniBrana" class="hlavni-panel">
+
+    <img
+        class="logo"
+        src="Heroes_3.png"
+        alt="Heroes III Board Game">
+
+    <h1>⚔ Vstup do cechu ⚔</h1>
+
+    <p class="podnadpis">
+        Pouze vyvolení hrdinové znají tajné heslo...
+    </p>
+
+    <div class="formular">
+
+        <label for="hesloCechu">Heslo cechu:</label>
+
+        <input
+            type="password"
+            id="hesloCechu"
+            placeholder="Zadej tajné heslo">
+
+        <button type="button" onclick="overHeslo()">
+            ⚔ Vstoupit do cechu
+        </button>
+
+    </div>
+
+    <p id="chybaHesla"></p>
+
+</div>
+
+
+    <main class="hlavni-panel" id="aplikace" style="display: none;">
 
         <img
             class="logo"
@@ -278,3 +311,4 @@
 
 </body>
 </html>
+

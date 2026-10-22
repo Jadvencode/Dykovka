@@ -590,3 +590,25 @@ async function aktualizujCenyVDatabazi() {
 
 // Načteme hráče ze Supabase
 nactiHrace();
+
+// ==========================================
+// VSTUP DO CECHU - KONTROLA HESLA
+// ==========================================
+
+function overHeslo() {
+
+    const heslo = document.getElementById("hesloCechu").value;
+
+    if (heslo === "Dykovka2027") {
+
+        document.getElementById("vstupniBrana").style.display = "none";
+
+        document.getElementById("aplikace").style.display = "block";
+
+    } else {
+
+        document.getElementById("chybaHesla").textContent =
+            "❌ Nesprávné heslo! Brány cechu zůstávají zavřené.";
+
+    }
+}
