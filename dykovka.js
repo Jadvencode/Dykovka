@@ -348,15 +348,34 @@ function zobrazHrace() {
                 : "celý víkend";
 
 
-        // Vytvoříme text hráče
-        polozka.textContent =
-            hrac.jmeno +
-            " – " +
-            delkaPobytu +
-            " – " +
-            Number(hrac.cena).toFixed(2) +
-            " Kč ";
+        // ==========================================
 
+        const obsah = document.createElement("div");
+        obsah.className = "obsah-pergamenu";
+
+        // Jméno hrdiny
+        const jmeno = document.createElement("div");
+        jmeno.className = "jmeno-hrdiny";
+        jmeno.textContent = hrac.jmeno;
+
+        // Délka pobytu
+        const pobyt = document.createElement("div");
+        pobyt.className = "pobyt-hrdiny";
+        pobyt.textContent = delkaPobytu;
+
+        // Cena hráče
+        const cena = document.createElement("div");
+        cena.className = "cena-hrdiny";
+        cena.textContent =
+            Number(hrac.cena).toFixed(2) + " Kč";
+
+        // Poskládáme údaje pod sebe
+        obsah.appendChild(jmeno);
+        obsah.appendChild(pobyt);
+        obsah.appendChild(cena);
+
+        // Vložíme údaje na pergamen
+        polozka.appendChild(obsah);
 
         // ==========================================
         // TLAČÍTKO ODEBRAT
@@ -367,7 +386,7 @@ function zobrazHrace() {
 
 
         tlacitko.textContent =
-            "Odebrat";
+            "X";
 
 
         // Co se stane po kliknutí
